@@ -1,0 +1,83 @@
+{% raw %}\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mypage}
+
+\def\course#1{\gdef\@course{#1}}
+\def\@course{\@latex@warning@no@line{No \noexpand\course given}}
+\def\coursenum#1{\gdef\@coursenum{#1}}
+\def\@coursenum{\@latex@warning@no@line{No \noexpand\coursenum given}}
+\def\student#1{\gdef\@student{#1}}
+\def\@student{\@latex@warning@no@line{No \noexpand\student given}}
+\def\studentnum#1{\gdef\@studentnum{#1}}
+\def\@studentnum{\@latex@warning@no@line{No \noexpand\studentnum given}} 
+
+\newcommand\mytitlepage{%
+%
+%\hypersetup{pageanchor=false}%  THIS IS SO THAT THIS PAGE IS NOT COUNTED BY HYPERREF. 
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+%Added this myself for some color
+\begin{figure}
+\centering
+\includegraphics[width=0.2\textwidth]{logo.jpg}
+\end{figure}
+\hfill
+\vspace{1cm}
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE McGill University}\\[2cm] % Name of your university/college
+\textsc{\Large \@course}\\[0.5cm] % Major heading such as course name
+\textsc{\large \@coursenum}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.6cm]
+{ \huge \bfseries \@title}\\[0.3cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+\setstretch{1.1}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+{\Large Student Name:}\\
+\@student % Your name\\
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+{\Large Student ID:} \\
+\@studentnum 
+\end{flushright}
+\end{minipage}\\[3cm]
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \@date} % Date, change the \today to a set date if you want to be precise
+%
+\vfill % Fill the rest of the page with whitespace
+%
+\end{titlepage}
+%
+%If you're not using SelimArticle as class, this can be commented out. 
+%\setstretch{1.5}
+%\renewcommand{\arraystretch}{1.136}
+%\frenchspacing
+%\setlength{\skip\footins}{1cm}
+%\hypersetup{pageanchor=true}
+\mypagesettings
+}
+%
+\endinput
+{% endraw %}

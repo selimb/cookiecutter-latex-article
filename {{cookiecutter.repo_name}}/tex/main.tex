@@ -1,0 +1,15 @@
+{% raw %}%Options : [NoTitlePage][Custom][Nomencl]
+\documentclass{SelimArticle}
+\input{./options}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\begin{document}
+\mytitlepage
+\tableofcontents
+\newpage
+\printnomenclature
+\newpage
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{dabib}
+\end{document}{% endraw %}

@@ -1,0 +1,30 @@
+%!TEX root = main.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Additional Packages/Options %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setlist{nosep}
+\hypersetup{hidelinks}
+
+%%%%%%%%%%%%%%%%%
+% Title Options %
+%%%%%%%%%%%%%%%%%
+\course{ {{cookiecutter.course_name}} }
+\coursenum{ {{cookiecutter.course_code}} } 
+%Add \\[0.3cm] for new line. 
+\title{ {{cookiecutter.title}} }   
+\student{ {{cookiecutter.first_name}} {% raw %}\textsc{{% endraw %}{{cookiecutter.last_name}} }}  
+\studentnum{ {{cookiecutter.student_id}} }
+\date{\today}
+{% raw %}
+%%%%%%%%%%%%%%%%%%%%%%%%%   
+% Additional Formatting %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%Horizontal line below section.
+\sectionfont{\sectionrule{0pt}{0pt}{-5pt}{0.8pt}}  
+%Section numbering depth. Value of 2 means numbering ends with subsections.
+\setcounter{secnumdepth}{3}  
+%Table of contents section depth. Same as above.
+\setcounter{tocdepth}{2} 
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}{% endraw %}
