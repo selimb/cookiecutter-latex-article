@@ -1,0 +1,1 @@
+ gswin64.exe -dSAFER -dBATCH -dNOPAUSE -sDEVICE=png16m -dGraphicsAlphaBits=4 -r300 -sOutputFile=pics_%%d.png example.pdf
