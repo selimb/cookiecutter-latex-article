@@ -1,6 +1,9 @@
-{% raw %}%Options : [NoTitlePage][Nomencl]
-\documentclass{SelimArticle}
-\input{./options}
+\documentclass
+{%- if "y" in cookiecutter.nomenclature|lower or "t" in cookiecutter.nomenclature|lower -%}
+[Nomencl]
+{%- endif -%}
+{SelimArticle}
+{% raw %}\input{./options}
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 \begin{document}
 \mytitlepage
