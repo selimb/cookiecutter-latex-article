@@ -1,15 +1,18 @@
-{% raw %}%Options : [NoTitlePage][Custom][Nomencl]
+{% raw %}%Options : [NoTitlePage][Nomencl]
 \documentclass{SelimArticle}
 \input{./options}
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 \begin{document}
 \mytitlepage
 \tableofcontents
+\newpage{% endraw %}
+{%- if "y" in cookiecutter.nomenclature|lower or "t" in cookiecutter.nomenclature|lower %}
+\printnomenclature % Use makeidx.bat followed by two pdflatex reruns.
 \newpage
-\printnomenclature
-\newpage
-
-
+{%- endif %}
+% Begin writing here.
+{% if "y" in cookiecutter.bibtex|lower or "t" in cookiecutter.bibtex|lower %}
 \bibliographystyle{IEEEtran}
 \bibliography{dabib}
-\end{document}{% endraw %}
+{%- endif %}
+\end{document}

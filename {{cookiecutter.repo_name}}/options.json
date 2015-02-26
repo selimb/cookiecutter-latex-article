@@ -1,0 +1,4 @@
+{
+    "bibtex":"{{cookiecutter.bibtex}}",
+    "nomenclature":"{{cookiecutter.nomenclature}}"
+}
