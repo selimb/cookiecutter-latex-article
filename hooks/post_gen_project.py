@@ -47,6 +47,11 @@ def process_nomencl(nomencl, tex_root):
     makeidx_path = os.path.join(tex_root, 'makeidx.bat')
     os.remove(makeidx_path)
 
+def delete_temp(tex_root):
+    """Delete figs/README.txt"""
+    readme_path = os.path.join(tex_root, 'figs','README.txt')
+    os.remove(readme_path)
+
 if __name__ == '__main__':
     # TODO: Include conditional for tex root.
     tex_root = os.path.join(os.getcwd(),'tex')
@@ -54,6 +59,7 @@ if __name__ == '__main__':
         options = json.load(f)
         process_bibtex(check_true(options['bibtex']), tex_root)
         process_nomencl(check_true(options['nomenclature']), tex_root)
+        delete_temp(tex_root)
 
 
 
